@@ -17,4 +17,9 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
+    @Transactional
+    public Product createProduct(Product product) {
+
+        return productRepository.save(product);
+    }
 }
