@@ -27,4 +27,13 @@ public class ProductService {
 
         return productRepository.findAll();
     }
+
+    @Transactional
+    public Product updateQuantity(Long id, Integer newQuantity) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produit non trouvé avec l'id : " + id));
+        product.setQuantity(newQuantity);
+        return productRepository.save(product);
+    }
+
 }
