@@ -36,4 +36,8 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public long countLowStockProducts() {
+        return productRepository.countLowStockProducts();
+    }
+
 }
