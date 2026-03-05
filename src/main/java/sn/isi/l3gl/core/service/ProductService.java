@@ -22,4 +22,9 @@ public class ProductService {
 
         return productRepository.save(product);
     }
+
+    public List<Product> listProducts() {
+
+        return productRepository.findAll();
+    }
 }
